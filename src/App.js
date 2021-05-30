@@ -8,6 +8,7 @@ import "./css/App.css";
 const App = () => {
   const [isPcikMenuVisable, setIsPickMenuVisable] = useState(true);
   const [userPick, setUserPick] = useState(null);
+  const [computerPick, setComputerPick] = useState(null);
   const [isWinnerMenuVisabe, setIsWinnerMenuVisable] = useState(false);
   const [isCouterVisable, setIsCounterVisable] = useState(false);
   const [counter, setCounter] = useState(3);
@@ -19,7 +20,26 @@ const App = () => {
   };
 
   const pickWinner = () => {
-    const ComputerPick = Math.floor(Math.random() * 3) + 1;
+    const ComputerPick = Math.floor(Math.random() * 2);
+
+    //rock-0
+    //paper-1
+    //scissors-2
+    switch (ComputerPick) {
+      case 0:
+        setComputerPick("rock");
+        break;
+      case 1:
+        setComputerPick("paper");
+        break;
+      case 2:
+        setComputerPick("scissors");
+        break;
+      default:
+        setComputerPick("");
+        break;
+    }
+
     setIsCounterVisable(true);
 
     let count = 3;
@@ -35,11 +55,26 @@ const App = () => {
     }, 1000);
   };
 
+  const handleClickReset = () => {
+    setIsPickMenuVisable(true);
+    setUserPick(null);
+    setComputerPick(null);
+    setIsWinnerMenuVisable(false);
+    setIsCounterVisable(false);
+    setCounter(3);
+  };
+
   return (
     <main>
       {isPcikMenuVisable && <Pick click={handleClick} />}
       {isCouterVisable && <Counter counter={counter} />}
-      {isWinnerMenuVisabe && <WinnerMenu />}
+      {isWinnerMenuVisabe && (
+        <WinnerMenu
+          userPick={userPick}
+          computerPick={computerPick}
+          reset={handleClickReset}
+        />
+      )}
     </main>
   );
 };

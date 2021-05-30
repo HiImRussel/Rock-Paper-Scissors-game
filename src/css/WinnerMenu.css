@@ -1,0 +1,50 @@
+#winner-section {
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#picked-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+.picked-item svg {
+  height: 30vw;
+}
+
+.picked-item h5 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+#picked-items h4 {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 3.5em;
+  text-shadow: 3px 2px 0px rgb(0, 0, 0);
+}
+
+#winner-section h2 {
+  margin-top: 50px;
+}
+
+#winner-section button {
+  background-color: transparent;
+  outline: none;
+  border: 2px solid white;
+  padding: 2px 40px;
+  font-size: 1.5em;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#winner-section button:hover {
+  transform: scale(1.1);
+}
