@@ -1,0 +1,11 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Oxygen", sans-serif;
+}
+
+main {
+  background: radial-gradient(50% 88.89% at 50% 50%, #6b0f7a 0%, #313131 100%);
+  max-height: 100vh;
+  min-height: 100vh;
+}
