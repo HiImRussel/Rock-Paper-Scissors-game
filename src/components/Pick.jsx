@@ -5,7 +5,7 @@ const Pick = ({ click }) => {
     <section id="picker-section">
       <h1>Pick one!</h1>
       <div id="pick-boxes">
-        <div class="pick-box" onClick={click}>
+        <div className="pick-box" onClick={() => click("rock")}>
           <svg
             id="Layer_1"
             viewBox="0 0 512 512"
@@ -78,7 +78,7 @@ const Pick = ({ click }) => {
           <p>Rock</p>
         </div>
 
-        <div class="pick-box" onClick={click}>
+        <div className="pick-box" onClick={() => click("paper")}>
           <svg
             id="Layer_1"
             enable-background="new 0 0 512 512"
@@ -171,7 +171,7 @@ const Pick = ({ click }) => {
           <p>Paper</p>
         </div>
 
-        <div class="pick-box" onClick={click}>
+        <div className="pick-box" onClick={() => click("scissors")}>
           <svg
             id="Layer_1"
             enable-background="new 0 0 497 497"
